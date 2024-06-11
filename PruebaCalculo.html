@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Precio</title>
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+        }
+        .resultado {
+            margin-left: 10px;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            Arena 
+            <div class="container">
+                <input type="number" id="cantidad" placeholder="Ingrese cantidad" min="1">
+                <button onclick="calcularPrecio()">Calcular Precio</button>
+                <div class="resultado" id="resultado"></div>
+            </div>
+        </li>
+    </ul>
+
+    <script>
+        function calcularPrecio() {
+            const precioPorUnidad = 50; // Precio fijo por unidad de arena
+            const cantidad = document.getElementById('cantidad').value;
+            const resultado = cantidad * precioPorUnidad;
+            document.getElementById('resultado').innerText = 'Precio Total: $' + resultado;
+        }
+    </script>
+</body>
+</html>
